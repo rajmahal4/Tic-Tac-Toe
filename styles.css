@@ -1,0 +1,49 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  h1{
+    text-align: center;
+
+
+  }
+  
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+
+.container-wrapper {
+    position: absolute;
+    display: grid;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 70%;
+
+  }
+
+#board{
+    position: relative;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.square{
+border: solid black;
+text-align: center;
+font-size: 50px;
+
+}
+
+#reset-btn{
+align-self: center;
+width: 95px;
+height: 35px;
+}
