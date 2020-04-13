@@ -6,7 +6,7 @@ const gameBoard = (() =>{
     board.addEventListener("click", (e)=>{
 
         const {target} = e;
-
+        const id = target.id
 
 
         if(target.id !== "board" && flag === true && target.innerHTML === ""){
@@ -28,8 +28,11 @@ const gameBoard = (() =>{
         gameArray[`${target.id}`] = {player2};
         console.log(target)
     }
+    checkBoard();
     })
 })();
+
+
 
 console.log(gameArray)
 
@@ -54,4 +57,31 @@ function Reset(){
     
 }
 
+
+function checkBoard(){
+    const board = document.querySelector("#board");
+
+    if(board.children[0].innerHTML === "X" && board.children[4].innerHTML === "X" && board.children[8].innerHTML === "X"){
+        alert("You win");
+        Reset();
+        return
+    }else if(board.children[0].innerHTML === "X" && board.children[1].innerHTML === "X" && board.children[2].innerHTML === "X"){
+        alert("You Win")
+        Reset();
+        return
+    }else if(board.children[0].innerHTML === "X" && board.children[3].innerHTML === "X" && board.children[6].innerHTML === "X"){
+        alert("You Win")
+        Reset();
+        return
+    }else if(board.children[6].innerHTML === "X" && board.children[7].innerHTML === "X" && board.children[8].innerHTML === "X"){
+        alert("You Win")
+        Reset();
+        return
+    }else if(board.children[2].innerHTML === "X" && board.children[5].innerHTML === "X" && board.children[8].innerHTML === "X" || board.children[2].innerHTML === "X" && board.children[6].innerHTML === "X" && board.children[4].innerHTML === "X"){
+        alert("You Win")
+        Reset();
+        return
+    }
+    
+}
 console.log(gameArray.length)
